@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>创建</title>
+    </head>
+
+    <body>
+        <form action="{% url 'user:create' %}" method="POST">
+            {% csrf_token %}
+            {% for k,v in errors.items %}
+            {{ v }}<br />
+            {% endfor %}
+            用户名: <input type="text" name="username" />
+            <br />
+            密码: <input type="password" name="password" />
+            <br />
+            再次输入密码: <input type="password" name="password_1" />
+            <br />
+            <input type="submit" value="添加">
+        </form>
+
+    </body>
+</html>

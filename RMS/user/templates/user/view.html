@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>更改页面</title>
+    </head>
+
+    <body>
+        <form action="{% url 'user:update' %}" method="POST">
+            {% csrf_token %}
+            {% for k,v in errors.items %}
+                {{ v }}<br />
+            {% endfor %}
+            <input type="hidden" name="id" value="{{ user.id }}">
+            用户名(不可更改): <input type="text" name="username"  value="{{ user.name }}" readonly/>
+            <br />
+            旧密码: <input type="password" name="password_old" />
+            <br />
+            新密码: <input type="password" name="password" />
+            <br />
+            再次确认新密码: <input type="password" name="password_1" />
+            <br />
+            <input type="submit" value="更改">
+        </form>
+    </body>
+</html>

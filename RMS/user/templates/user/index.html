@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>用户登录</title>
+    </head>
+
+    <body>
+       <a href="{% url 'user:logout' %}">退出登录</a>
+       <a href="{% url 'user:create' %}">增加</a><br />
+       当前登录用户 {{ request.session.user.name }}<br />
+       <table>
+           <thead>
+               <tr>
+                   <th>编号</th>
+                   <th>名字</th>
+                   <th>密码</th>
+               </tr>
+           </thead>
+           <tbody>
+            {% for user in users %}
+               <tr>
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.password }}</td>
+                  <td><a href="{% url 'user:delete' %}?uid={{user.id}}">删除</a></td>
+                  <td><a href="{% url 'user:update' %}?uid={{user.id}}">修改</a></td>
+               </tr>
+            {% endfor %}
+           </tbody>
+       </table>
+    </body>
+</html>
