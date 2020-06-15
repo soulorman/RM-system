@@ -62,7 +62,7 @@
                             <span class="caret"></span>
                         </a>
                     <ul id="menu3" class="dropdown-menu" aria-labelledby="drop4">
-                        <li class="{% block nav_asset %}{% endblock %}"><a href="">所有服务器软/硬件资源管理</a></li>
+                        <li class="{% block nav_asset %}{% endblock %}"><a href="{% url 'asset:index' %}">所有服务器软/硬件资源管理</a></li>
                         <li class="{% block nav_log_analysis %}{% endblock %}"><a href="" >日志文件上传并分析</a></li>
                         <li class="{% block nav_deploy %}{% endblock %}"><a href="">医院线上项目部署记录</a></li>
                     </ul>

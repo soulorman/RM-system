@@ -20,5 +20,7 @@ from user import views
 urlpatterns = [
 #    path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
+    path('asset/',include('asset.urls')),
     path('', views.index),
+    path('api/',include('api.urls')),
 ]
