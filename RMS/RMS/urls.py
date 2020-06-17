@@ -23,4 +23,5 @@ urlpatterns = [
     path('asset/',include('asset.urls')),
     path('', views.index),
     path('api/',include('api.urls')),
+    path('webanalysis/',include('webanalysis.urls')),
 ]
